@@ -1,0 +1,127 @@
+@charset "UTF-8";
+/* CSS Document */
+
+
+/*--------------------------------- Global variables --------------------------------*/
+:root{
+	/* Colors */
+	--black: #000000;
+  --white: #ffffff;
+}
+/*------------------------------- Global variables END ------------------------------*/
+
+
+/*-------------------------------------- Fonts --------------------------------------*/
+/* @font-face{
+  font-family: Comfortaa;
+  src: url("/src/fonts/Comfortaa/Comfortaa-VariableFont_wght.ttf");
+} */
+/*------------------------------------ Fonts END ------------------------------------*/
+
+
+/*-------------------------------- Set default stuff --------------------------------*/
+html{
+	overflow-y: scroll;
+  overflow-x: hidden;
+  -moz-scrollbars: vertical;
+}
+
+*{
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+
+body {
+  max-width: 100%;
+  min-height: 100vh;
+  padding-bottom: 30px;
+}
+
+#wrapper{
+	max-width: 1900px;
+	margin: 0 auto;
+}
+
+h1, h2, h3{
+  font-weight: normal;
+}
+
+a{
+  cursor: pointer;
+  text-decoration: none;
+}
+
+a:visited{
+  /*Add a color for visited links*/
+}
+
+p{
+  padding-bottom: .5em;
+}
+
+button{
+  cursor: pointer;
+  border: none;
+}
+
+button:focus, input:focus{
+  outline: none;
+}
+
+img, video{
+  width: 100%;
+  text-align: center;
+}
+
+::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
+  /*Add placeholder text color*/
+  /*Add placeholder text font*/
+  opacity: 1; /* Firefox */
+}
+
+:-ms-input-placeholder { /* Internet Explorer 10-11 */
+  /*Add placeholder text color*/
+  /*Add placeholder text font*/
+}
+
+::-ms-input-placeholder { /* Microsoft Edge */
+  /*Add placeholder text color*/
+  /*Add placeholder text font*/
+}
+/*------------------------------ Set default stuff END ------------------------------*/
+
+/*----------------------------------- Common classes --------------------------------*/
+.absolute_element_centered{
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  margin: auto;
+  /*Add an element height on the specific element*/
+}
+
+.flexRow{
+	display: flex;
+	flex-direction: row;
+}
+
+.flexColumn{
+	display: flex;
+	flex-direction: column;
+}
+
+.posAbsolute{
+  position: absolute;
+}
+
+.posRelative{
+  position: relative;
+}
+
+.posSticky{
+  position: sticky;
+  position: -webkit-sticky; /* Safari */
+}
+/*--------------------------------- Common classes END ------------------------------*/
