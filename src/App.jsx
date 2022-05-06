@@ -5,6 +5,7 @@ import Home_Page from "./pages/Home_Page";
 
 // Components
 import Header from "./components/Header";
+import Nav from "./components/Nav";
 
 function App() {
 
@@ -12,6 +13,7 @@ function App() {
       <div id="wrapper" className="App">
         <BrowserRouter>
           <Header />
+          <Nav />
 
             <Routes>
               <Route path="/" element={<Home_Page />} />
@@ -22,7 +24,3 @@ function App() {
 }
 
 export default App
-
-/*
-
-*/

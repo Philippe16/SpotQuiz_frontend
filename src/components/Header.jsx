@@ -16,8 +16,3 @@ const Header = props => {
 }
 
 export default Header
-
-/*
-  Og nu er vi done med header xD oki xD
-  Tænker nu er et godt tidspunkt lige at commit'e og pushe
-*/
