@@ -1,3 +1,0 @@
-Delete once you've uploaded your first font.
-Was only created so that the folder could be uploaded to GitHub.
-(GitHub does not allow empty folders to be uploaded...)

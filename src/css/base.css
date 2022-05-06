@@ -7,14 +7,16 @@
 	/* Colors */
 	--black: #000000;
   --white: #ffffff;
+  --purple: #680BA6;
+  --placeholder_gray: #4B4B4B;
 }
 /*------------------------------- Global variables END ------------------------------*/
 
 
 /*-------------------------------------- Fonts --------------------------------------*/
-/* @font-face{
-  font-family: Comfortaa;
-  src: url("/src/fonts/Comfortaa/Comfortaa-VariableFont_wght.ttf");
+ @font-face{
+  font-family: dosis_regular;
+  src: url("/src/fonts/Dosis/static/Dosis-Regular.ttf");
 } */
 /*------------------------------------ Fonts END ------------------------------------*/
 
@@ -36,6 +38,9 @@ body {
   max-width: 100%;
   min-height: 100vh;
   padding-bottom: 30px;
+  background-color: var(--black); 
+  color: var(--white);
+  font-family: dosis_regular;
 }
 
 #wrapper{
@@ -75,19 +80,19 @@ img, video{
 }
 
 ::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
-  /*Add placeholder text color*/
-  /*Add placeholder text font*/
+  color: var(--placeholder_gray);
+  font-family: dosis_regular;
   opacity: 1; /* Firefox */
 }
 
 :-ms-input-placeholder { /* Internet Explorer 10-11 */
-  /*Add placeholder text color*/
-  /*Add placeholder text font*/
+  color: var(--placeholder_gray);
+  font-family: dosis_regular;
 }
 
 ::-ms-input-placeholder { /* Microsoft Edge */
-  /*Add placeholder text color*/
-  /*Add placeholder text font*/
+  color: var(--placeholder_gray);
+  font-family: dosis_regular;
 }
 /*------------------------------ Set default stuff END ------------------------------*/
 
