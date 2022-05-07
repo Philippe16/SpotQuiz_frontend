@@ -28,7 +28,7 @@ const Nav = props => {
           </Link>
         </div>
 
-        <div className='nav_icon'>
+        <div className='nav_icon'> 
           <Link to="/createQuiz">
             <FontAwesomeIcon icon={ faCirclePlus } className="navIcon" />
           </Link>

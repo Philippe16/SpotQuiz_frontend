@@ -1,2 +1,24 @@
 @charset "UTF-8";
 /* CSS Document */
+
+#logo_container{
+  width: 50%;
+  margin: 0 auto;
+  margin-top: 15%; 
+}
+
+#spotify_banner_container{
+  align-items: center;
+  justify-content: flex-end;
+}
+
+#spotify_banner_container img{
+  width: 5%;
+  margin-left: 5px;
+}
+
+
+/* 
+  Hmmm, de blev centret i forhold til hinanden, men den rykkede tilbage til venstre...
+  Tænke
+*/
