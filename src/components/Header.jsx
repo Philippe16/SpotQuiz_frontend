@@ -5,7 +5,7 @@ import { Link } from "react-router-dom"
 import '../css/header.css';
 
 // Images
-import logo from '../images/logo/full_logo.png'
+import logo from '../images/logo/full_logo/full_logo_500w.png'
 
 
 const Header = props => {

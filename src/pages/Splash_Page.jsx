@@ -7,7 +7,7 @@ import { useNavigate } from 'react-router-dom'
 import '../css/splash_page.css';
 
 // Images
-import logo from '../images/logo/spotquiz_logo.png';
+import logo from '../images/logo/full_logo/spotquiz_logo_1000w.png';
 import banner from '../images/spotify_logo/spotify_banner.png';
 
 const Splash_Page = props => {
@@ -38,8 +38,3 @@ const Splash_Page = props => {
 }
 
 export default Splash_Page
-
-/*
-  Hvad synes du med de 1s? For meget? For lidt? Tilpas?
-  I know, home hopper lidt efterfølgende (ved ikke helt hvorfor xD)
-*/

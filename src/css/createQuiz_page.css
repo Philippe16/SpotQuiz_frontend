@@ -39,11 +39,17 @@ main{
 }
 
 #num_container{
+  margin-top: 20px;
   justify-content: space-around;
-  text-align:center;
+  text-align: center;
   align-content: center;
 }
 
 .num{
-  font-size: 4em;
+  width: 30%;
+  max-width: 100px;
+}
+
+.num:hover{
+  cursor: pointer;
 }
