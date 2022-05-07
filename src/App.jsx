@@ -1,6 +1,7 @@
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 
 // Pages
+import Splash_Page from "./pages/Splash_Page";
 import Home_Page from "./pages/Home_Page";
 
 // Components
@@ -16,7 +17,8 @@ function App() {
           <Nav />
 
             <Routes>
-              <Route path="/" element={<Home_Page />} />
+              <Route path="/" element={<Splash_Page />} />
+              <Route path="/home" element={<Home_Page />} />
             </Routes>
         </BrowserRouter>
       </div>

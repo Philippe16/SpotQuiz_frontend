@@ -1,13 +1,9 @@
 @charset "UTF-8";
 /* CSS Document */
 
-
-
 #nav{
  justify-content: space-between;
- height: 275px; 
- 
-    
+ height: 275px;    
 }
 
 .navIcon{
