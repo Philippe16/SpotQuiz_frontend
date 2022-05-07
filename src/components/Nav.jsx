@@ -9,7 +9,7 @@ import { faHouse } from '@fortawesome/free-solid-svg-icons'
 import { faMagnifyingGlass } from '@fortawesome/free-solid-svg-icons'
 import { faCirclePlus } from '@fortawesome/free-solid-svg-icons'
 import { faMusic } from '@fortawesome/free-solid-svg-icons'
-import { faCircleUser } from '@fortawesome/free-solid-svg-icons'
+import { faUserLarge } from '@fortawesome/free-solid-svg-icons'
 
 const Nav = props => {
   return (
@@ -31,7 +31,7 @@ const Nav = props => {
         </div>
         
         <div className="nav_icon">
-          <FontAwesomeIcon icon={ faCircleUser } className="navIcon" /> 
+          <FontAwesomeIcon icon={ faUserLarge } className="navIcon" /> 
         </div>
     </nav>
   )
