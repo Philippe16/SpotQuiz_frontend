@@ -5,3 +5,14 @@ main{
   width: 95%;
   order: 1;
 }
+
+.h2_icon{
+  margin-left: 5px;
+  font-size: .8em;
+}
+
+#createQuiz_form{
+  margin: 20px auto;
+  padding: 20px 0;
+  border: 1px solid red;
+}

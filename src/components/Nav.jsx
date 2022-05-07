@@ -5,13 +5,13 @@ import { Link } from "react-router-dom"
 import '../css/nav.css';
 
 // FontAwesome icons
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
-import { faHouse } from '@fortawesome/free-solid-svg-icons'
-import { faMagnifyingGlass } from '@fortawesome/free-solid-svg-icons'
-import { faCirclePlus } from '@fortawesome/free-solid-svg-icons'
-import { faMusic } from '@fortawesome/free-solid-svg-icons'
-import { faUserLarge } from '@fortawesome/free-solid-svg-icons'
+import { faHouse } from '@fortawesome/free-solid-svg-icons';
+import { faMagnifyingGlass } from '@fortawesome/free-solid-svg-icons';
+import { faCirclePlus } from '@fortawesome/free-solid-svg-icons';
+import { faMusic } from '@fortawesome/free-solid-svg-icons';
+import { faUserLarge } from '@fortawesome/free-solid-svg-icons';
 
 const Nav = props => {
   return (
