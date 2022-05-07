@@ -29,7 +29,7 @@ const Nav = props => {
         </div>
 
         <div className='nav_icon'>
-          <Link to="/home">
+          <Link to="/createQuiz">
             <FontAwesomeIcon icon={ faCirclePlus } className="navIcon" />
           </Link>
         </div>

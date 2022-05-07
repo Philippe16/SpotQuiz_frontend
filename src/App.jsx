@@ -3,6 +3,7 @@ import { BrowserRouter, Route, Routes } from "react-router-dom";
 // Pages
 import Splash_Page from "./pages/Splash_Page";
 import Home_Page from "./pages/Home_Page";
+import CreateQuiz_Page from "./pages/CreateQuiz_Page";
 
 // CSS
 import './css/base.css'
@@ -15,6 +16,7 @@ function App() {
             <Routes>
               <Route path="/" element={<Splash_Page />} />
               <Route path="/home" element={<Home_Page />} />
+              <Route path="/createQuiz" element={<CreateQuiz_Page />} />
             </Routes>
         </BrowserRouter>
       </div>
