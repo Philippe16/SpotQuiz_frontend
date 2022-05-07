@@ -1,4 +1,6 @@
 
+import { Link } from "react-router-dom"
+
 // CSS
 import '../css/nav.css';
 
@@ -13,32 +15,38 @@ import { faUserLarge } from '@fortawesome/free-solid-svg-icons'
 
 const Nav = props => {
   return (
-    <nav id="nav" className="flexColumn">
+    <nav id="nav" className="flexColumn posFixed">
         <div className="nav_icon">
-          <FontAwesomeIcon icon={ faHouse } className="navIcon" />
+          <Link to="/home">
+            <FontAwesomeIcon icon={ faHouse } className="navIcon" />
+          </Link>
         </div>
         
         <div className="nav_icon">
-          <FontAwesomeIcon icon={ faMagnifyingGlass } className="navIcon" />
+          <Link to="/home">
+            <FontAwesomeIcon icon={ faMagnifyingGlass } className="navIcon" />
+          </Link>
         </div>
 
         <div className='nav_icon'>
-          <FontAwesomeIcon icon={ faCirclePlus } className="navIcon" />  
+          <Link to="/home">
+            <FontAwesomeIcon icon={ faCirclePlus } className="navIcon" />
+          </Link>
         </div>
         
         <div className="nav_icon">
-          <FontAwesomeIcon icon={ faMusic } className="navIcon" />
+          <Link to="/home">
+            <FontAwesomeIcon icon={ faMusic } className="navIcon" />
+          </Link>
         </div>
         
         <div className="nav_icon">
-          <FontAwesomeIcon icon={ faUserLarge } className="navIcon" /> 
+          <Link to="/home">
+            <FontAwesomeIcon icon={ faUserLarge } className="navIcon" />
+          </Link>
         </div>
     </nav>
   )
 }
 
 export default Nav
-
-/*  
-  Så kan vi godt fjerne den hvide farve. For den bliver sat inde i base.
-*/

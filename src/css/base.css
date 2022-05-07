@@ -48,6 +48,10 @@ body {
 	margin: 0 auto;
 }
 
+main{
+  padding: 0 20px;
+}
+
 h1, h2, h3{
   font-weight: normal;
 }
@@ -55,10 +59,11 @@ h1, h2, h3{
 a{
   cursor: pointer;
   text-decoration: none;
+  color: var(--white);
 }
 
 a:visited{
-  /*Add a color for visited links*/
+  color: var(--white);
 }
 
 p{
@@ -123,6 +128,10 @@ img, video{
 
 .posRelative{
   position: relative;
+}
+
+.posFixed{
+  position: fixed;
 }
 
 .posSticky{

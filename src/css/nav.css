@@ -2,13 +2,21 @@
 /* CSS Document */
 
 #nav{
- justify-content: space-between;
- height: 275px;    
+  width: 5%;
+  order: 2;
+  right: 0;
+  text-align: center;
+  justify-content: space-between;
+  height: 275px;    
 }
 
 .navIcon{
   font-size: 2.2em;
   padding-left: 20px;  
   padding-right: 20px;
+  transition: ease-in-out .1s;
 }
 
+.navIcon:hover{
+  color: var(--purple);
+}
