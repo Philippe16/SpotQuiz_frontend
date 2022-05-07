@@ -53,3 +53,7 @@ main{
 .num:hover{
   cursor: pointer;
 }
+
+#create_questions_container{
+  flex-wrap: wrap;
+}

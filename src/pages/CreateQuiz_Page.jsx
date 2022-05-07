@@ -1,5 +1,5 @@
 
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 
 // Components
 import Header from "../components/Header";
@@ -15,6 +15,7 @@ import { faMusic } from '@fortawesome/free-solid-svg-icons';
 import "../css/createQuiz_page.css";
 
 const CreateQuiz_Page = props => {
+  // ------------------------ Change chosen num of questions --------------------
   // Non-chosen img
   const num3_nonChosen = "../src/images/icons/numOfQuestions/num3.png";
   const num5_nonChosen = "../src/images/icons/numOfQuestions/num5.png";
@@ -32,7 +33,9 @@ const CreateQuiz_Page = props => {
 
   const allSetNum = [setNum3, setNum5, setNum10];
 
-  const [currentlyChosenNum, setCurrentlyChosenNum] = useState(num5);
+  let currentlyChosenNum = num5;
+
+  const [questionElements, setQuestionElements] = useState([0, 1, 2, 3, 4]);
 
   const handleChosenNum = (e) => {
     for(let i = 0; i < allSetNum.length; i ++){
@@ -41,15 +44,25 @@ const CreateQuiz_Page = props => {
 
     if(e.target.id === "num3"){
       setNum3(num3_Chosen);
-      setCurrentlyChosenNum(num3);
+      currentlyChosenNum = num3;
     } else if(e.target.id === "num5"){
       setNum5(num5_Chosen);
-      setCurrentlyChosenNum(num5);
+      currentlyChosenNum = num5;
     } else if(e.target.id === "num10"){
       setNum10(num10_Chosen);
-      setCurrentlyChosenNum(num10);
+      currentlyChosenNum = num10;
+    }
+
+    if(currentlyChosenNum === num3){
+      setQuestionElements([0, 1, 2]);
+    }else if(currentlyChosenNum === num5){
+      setQuestionElements([0, 1, 2, 3, 4]);
+    }else if(currentlyChosenNum === num10){
+      setQuestionElements([0, 1, 2, 3, 4, 5, 6, 7, 8, 9]);
     }
   }
+  // ---------------------- Change chosen num of questions END ------------------
+
 
   // ---------------------------------- return ----------------------------------
   return (
@@ -91,6 +104,11 @@ const CreateQuiz_Page = props => {
               </section>
             </div> {/* .flexRow .formSection END */}
 
+            <section id="create_questions_container" className="flexRow">
+              { questionElements.map((index) => {
+                return(<QuestionForm key={ index }/>)
+              })}
+            </section>
           </form>
         </main>
       </ div>
