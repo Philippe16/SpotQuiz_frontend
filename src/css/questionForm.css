@@ -68,6 +68,7 @@
 
 .musicSearch_input_container{
   justify-content: center;
+  margin-bottom: 20px;
 }
 
 .musicSearch_input{
@@ -87,4 +88,30 @@
   border-radius: 0 90px 90px 0;
   font-size: 1.2em;
   background: var(--white);
+}
+
+.chosenMusic_container, .noChosenMusic_container{
+  height: 94px;
+  width: 90%;
+  margin: 0 auto;
+  padding: 10px;
+}
+
+.noChosenMusic_container{
+  border: 2px solid var(--placeholder_grey);
+  color: var(--placeholder_grey);
+  font-size: 1.3em;
+}
+
+.chosenMusic_container{
+  align-items: center;
+  border: 2px solid var(--spotify_green);
+  color: var(--white);
+  font-size: 1.2em;
+}
+
+.chosenMusic_img_container{
+  width: 70px;
+  margin-right: 10px;
+  border: 1px solid red;
 }

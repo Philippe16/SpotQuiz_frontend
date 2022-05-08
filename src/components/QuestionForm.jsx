@@ -1,5 +1,9 @@
 
-import PropTypes from 'prop-types'
+import { useState } from 'react';
+import PropTypes from 'prop-types';
+
+// JS
+import Music from "../js/objects/Music";
 
 // CSS
 import '../css/questionForm.css';
@@ -11,6 +15,19 @@ import { faMagnifyingGlass } from '@fortawesome/free-solid-svg-icons';
 
 
 const QuestionForm = ({ questionNum }) => {
+  const [chosenMusic, setChosenMusic] = useState(null);
+
+  const handleChosenMusic = e => {
+    let music = new Music("1", "title", "artist", "../src/images/logo/logo_100x100.png");
+
+    setChosenMusic({music: {
+      songID: music.songId,
+      title: music.title,
+      artist: music.artist,
+      imgLink: music.img_link
+    }});
+  }
+
   return (
     <div className="questionForm">
       <h2 className="formTitle">Question {questionNum}</h2>
@@ -43,8 +60,9 @@ const QuestionForm = ({ questionNum }) => {
 
           <input name={ "question" + questionNum + "op4" } type="text" className="option_input" />
         </div>
+      </div> {/* .flexRow .options_container END */}
 
-        <div className="musicSearch_container">
+      <div className="musicSearch_container">
           <div className="flexRow musicSearch_title_container">
             <h3 className="opTitle">Choose the music for this question </h3>
 
@@ -60,8 +78,33 @@ const QuestionForm = ({ questionNum }) => {
               <FontAwesomeIcon icon={ faMagnifyingGlass } className="musicSearch_icon" />
             </button>
           </div>
-        </div>
-      </div> {/* .flexRow .options_container END */}
+
+          <div className="posRelative create_music_container">
+            { !chosenMusic && (
+              <div onClick={e=> handleChosenMusic(e)} className="noChosenMusic_container">
+                No music, yet...
+              </div>
+            )}
+
+            { chosenMusic && (
+              <div className="flexRow chosenMusic_container">
+                <div className="chosenMusic_img_container">
+                  <img src={chosenMusic.music.imgLink} alt="Album cover image" />
+                </div>
+
+                <div className="flexColumn chosenMusic_info_container">
+                  <div className="chosenMusic_info">
+                    {chosenMusic.music.title}
+                  </div>
+
+                  <div className="chosenMusic_info">
+                    {chosenMusic.music.artist}
+                  </div>
+                </div>
+              </div>
+            )}
+          </div>
+        </div> {/* .musicSearch_container END */}
     </div>
   )
 }

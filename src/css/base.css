@@ -8,7 +8,7 @@
 	--black: #000000;
   --white: #ffffff;
   --purple: #680BA6;
-  --placeholder_gray: #4B4B4B;
+  --placeholder_grey: #4B4B4B;
   --spotify_green: #1DB954;
 }
 /*------------------------------- Global variables END ------------------------------*/
@@ -94,18 +94,18 @@ img, video{
 }
 
 ::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
-  color: var(--placeholder_gray);
+  color: var(--placeholder_grey);
   font-family: dosis_regular;
   opacity: 1; /* Firefox */
 }
 
 :-ms-input-placeholder { /* Internet Explorer 10-11 */
-  color: var(--placeholder_gray);
+  color: var(--placeholder_grey);
   font-family: dosis_regular;
 }
 
 ::-ms-input-placeholder { /* Microsoft Edge */
-  color: var(--placeholder_gray);
+  color: var(--placeholder_grey);
   font-family: dosis_regular;
 }
 /*------------------------------ Set default stuff END ------------------------------*/
