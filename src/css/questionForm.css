@@ -113,5 +113,16 @@
 .chosenMusic_img_container{
   width: 70px;
   margin-right: 10px;
-  border: 1px solid red;
+}
+
+.remove_chosenMusic_container{
+  top: 5px;
+  right: 10px;
+  font-size: 1.3em;
+  color: var(--placeholder_grey);
+  background-color: transparent;
+}
+
+.remove_chosenMusic_container:hover{
+  cursor: pointer;
 }

@@ -12,13 +12,14 @@ import '../css/questionForm.css';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
 import { faMagnifyingGlass } from '@fortawesome/free-solid-svg-icons';
+import { faXmark } from '@fortawesome/free-solid-svg-icons';
 
 
 const QuestionForm = ({ questionNum }) => {
   const [chosenMusic, setChosenMusic] = useState(null);
 
   const handleChosenMusic = e => {
-    let music = new Music("1", "title", "artist", "../src/images/logo/logo_100x100.png");
+    let music = new Music("1", "Bois Lie", "Avril Lavigne", "../src/images/logo/logo_100x100.png");
 
     setChosenMusic({music: {
       songID: music.songId,
@@ -26,6 +27,10 @@ const QuestionForm = ({ questionNum }) => {
       artist: music.artist,
       imgLink: music.img_link
     }});
+  }
+
+  const handleRemoveChosenMusic= e => {
+    setChosenMusic(null);
   }
 
   return (
@@ -87,7 +92,7 @@ const QuestionForm = ({ questionNum }) => {
             )}
 
             { chosenMusic && (
-              <div className="flexRow chosenMusic_container">
+              <div className="posRelative flexRow chosenMusic_container">
                 <div className="chosenMusic_img_container">
                   <img src={chosenMusic.music.imgLink} alt="Album cover image" />
                 </div>
@@ -101,6 +106,10 @@ const QuestionForm = ({ questionNum }) => {
                     {chosenMusic.music.artist}
                   </div>
                 </div>
+
+                <button type="button" onClick={e => handleRemoveChosenMusic(e)} className="posAbsolute remove_chosenMusic_container">
+                  <FontAwesomeIcon icon={ faXmark } className="remove_chosenMusic_icon" />
+                </button>
               </div>
             )}
           </div>
