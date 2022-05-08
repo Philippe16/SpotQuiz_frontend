@@ -3,5 +3,50 @@
 
 .questionForm{
   width: 49%;
+  margin-bottom: 20px;
 }
 
+.formTitle{
+  margin-left: 10%;
+  margin-bottom: 20px;
+  font-size: 1.8em;
+}
+
+.create_question_input_container{
+  text-align: center;
+}
+
+.create_question_input{
+  height: 50px;
+  width: 90%;
+  margin-bottom: 20px;
+  border: 2px solid var(--purple);
+  border-radius: 25px;
+  text-align: center;
+  font-size: 1.5em;
+}
+
+.options_container{
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+.option_container{
+  width: 49%;
+  text-align: center;
+}
+
+.opTitle{
+  margin-bottom: 20px;
+  font-size: 1.5em;
+}
+
+.option_input{
+  margin-bottom: 20px;
+  padding: 3px 5px;
+  border: 2px solid var(--purple);
+  border-radius: 15px;
+  height: 80px;
+  width: 70%;
+  font-size: 1.3em;
+}

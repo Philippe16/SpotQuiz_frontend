@@ -64,6 +64,14 @@ const CreateQuiz_Page = props => {
   // ---------------------- Change chosen num of questions END ------------------
 
 
+  // --------------------------------- Handle submit ----------------------------
+  const handleSubmit = e => {
+    e.preventDefault();
+
+    console.log("Later...");
+  }
+  // ------------------------------- Handle submit END --------------------------
+
   // ---------------------------------- return ----------------------------------
   return (
     <div>
@@ -80,14 +88,14 @@ const CreateQuiz_Page = props => {
             <FontAwesomeIcon icon={ faMusic } className="h2_icon" />
           </h2>
 
-          <form id="createQuiz_form">
-            <div className="flexRow formSection">
-              <section className="formDivider">
+          <form id="createQuiz_form" onSubmit={e => handleSubmit(e)}>
+            <div id="formTopSection" className="flexRow">
+              <section id="quizTitle_input_container" className="formDivider">
                 <input id="quizTitle_input" name="quizTitle" type="text" placeholder="Give your quiz a title"/>
               </section>
 
               <section id="numOfQuestion_container" className="formDivider">
-                <h2>Choose number of questions</h2>
+                <h2 className="formTitle">Choose number of questions</h2>
                   <div id="num_container" className="flexRow">
                     <div className="num">
                       <img id="num3" onClick={ e => handleChosenNum(e) } src={ num3 } alt="A circular gradient colored icon with the number 3 in the middle"/>
@@ -102,13 +110,17 @@ const CreateQuiz_Page = props => {
                     </div>
                 </div>
               </section>
-            </div> {/* .flexRow .formSection END */}
+            </div> {/* #formTopSection .flexRow END */}
 
             <section id="create_questions_container" className="flexRow">
               { questionElements.map((index) => {
-                return(<QuestionForm key={ index }/>)
+                return(<QuestionForm key={ index } questionNum={index + 1} />)
               })}
             </section>
+
+            <div id="create_quiz_submit_btn_container">
+              <button id="create_quiz_submit_btn" type="submit">Save</button>
+            </div>
           </form>
         </main>
       </ div>
