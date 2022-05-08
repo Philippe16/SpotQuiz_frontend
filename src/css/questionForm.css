@@ -50,3 +50,41 @@
   width: 70%;
   font-size: 1.3em;
 }
+
+.musicSearch_container{
+  margin-bottom: 30px;
+}
+
+.musicSearch_title_container{
+  margin-top: 10px;
+  justify-content: center;
+}
+
+.musicSearch_title_img_container{
+  margin-left: 10px;
+  width: 4%;
+  min-width: 25px;
+}
+
+.musicSearch_input_container{
+  justify-content: center;
+}
+
+.musicSearch_input{
+  width: 80%;
+  height: 40px;
+  padding: 3px 10px;
+  border: 2px solid var(--spotify_green);
+  border-right: none;
+  border-radius: 90px 0 0 90px;
+  font-size: 1.2em;
+}
+
+.musicSearch_btn{
+  width: 10%;
+  border: 2px solid var(--spotify_green);
+  border-left: none;
+  border-radius: 0 90px 90px 0;
+  font-size: 1.2em;
+  background: var(--white);
+}
