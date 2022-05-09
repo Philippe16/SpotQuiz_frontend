@@ -14,31 +14,52 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faMagnifyingGlass } from '@fortawesome/free-solid-svg-icons';
 import { faXmark } from '@fortawesome/free-solid-svg-icons';
 
+// Components
+import MusicSearchItem from "../components/MusicSearchItem";
 
 const QuestionForm = ({ questionNum }) => {
+  const handleShowResults = e => {
+    document.querySelector("#musicSearcResult" + questionNum).style.display = "block";
+  }
+
+
   const [chosenMusic, setChosenMusic] = useState(null);
 
   const handleChosenMusic = e => {
-    let music = new Music("1", "Bois Lie", "Avril Lavigne", "../src/images/logo/logo_100x100.png");
+    let music = new Music("1", "Bois Lie", "Avril Lavigne", "../src/images/logo/logo_100x100.png", "SnippetLink");
 
     setChosenMusic({music: {
       songID: music.songId,
       title: music.title,
       artist: music.artist,
-      imgLink: music.img_link
+      imgLink: music.img_link,
+      snippetLink: music.snippet_link
     }});
   }
+
+
+  document.addEventListener('mouseup', function(e) {
+    let musicSearcResult_container_elements = document.querySelectorAll(".musicSearcResult_container");
+    
+    musicSearcResult_container_elements.forEach(element => {
+      if (!element.contains(e.target)) {
+        element.style.display = 'none';
+      }
+    });
+  });
+
 
   const handleRemoveChosenMusic= e => {
     setChosenMusic(null);
   }
 
+
   return (
     <div className="questionForm">
-      <h2 className="formTitle">Question {questionNum}</h2>
+      <h2 className="formTitle">Question { questionNum }</h2>
 
       <div className="create_question_input_container">
-        <input name={"question" + questionNum} className="create_question_input" type="text" placeholder="E.g. Who is the artist of this song?" />
+        <input name={ "question" + questionNum } className="create_question_input" type="text" placeholder="E.g. Who is the artist of this song?" />
       </div>
 
       <div className="flexRow options_container">
@@ -80,11 +101,20 @@ const QuestionForm = ({ questionNum }) => {
             <input className="musicSearch_input" type="text" placeholder="Search by music title" />
 
             <button className="musicSearch_btn" type="button">
-              <FontAwesomeIcon icon={ faMagnifyingGlass } className="musicSearch_icon" />
+              <FontAwesomeIcon onClick={ e => handleShowResults(e) } icon={ faMagnifyingGlass } className="musicSearch_icon" />
             </button>
           </div>
 
           <div className="posRelative create_music_container">
+            <div id={ "musicSearcResult" + questionNum } className="posAbsolute musicSearcResult_container">
+              <div className="musicSearcResult_title">
+                Result(s)
+              </div>
+
+              <MusicSearchItem elementID = { "resultItem_q" + questionNum } />
+              <MusicSearchItem elementID = { "resultItem_q" + questionNum } />
+            </div>
+
             { !chosenMusic && (
               <div onClick={e=> handleChosenMusic(e)} className="noChosenMusic_container">
                 No music, yet...

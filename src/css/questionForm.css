@@ -1,6 +1,7 @@
 @charset "UTF-8";
 /* CSS Document */
 
+
 .questionForm{
   width: 49%;
   margin-bottom: 20px;
@@ -12,6 +13,7 @@
   font-size: 1.8em;
 }
 
+/*------------------------------ Q & A section ------------------------------*/
 .create_question_input_container{
   text-align: center;
 }
@@ -50,7 +52,10 @@
   width: 70%;
   font-size: 1.3em;
 }
+/*-------------------------------- Q & A END --------------------------------*/
 
+
+/*-------------------------- Select music section ---------------------------*/
 .musicSearch_container{
   margin-bottom: 30px;
 }
@@ -66,6 +71,7 @@
   min-width: 25px;
 }
 
+/*----------------------- Search field ------------------------*/
 .musicSearch_input_container{
   justify-content: center;
   margin-bottom: 20px;
@@ -89,12 +95,33 @@
   font-size: 1.2em;
   background: var(--white);
 }
+/*--------------------- Search field END ----------------------*/
 
+
+/*------------------- Search result section --------------------*/
+.musicSearcResult_container{
+  display: none;
+  left: 5%;
+  width: 90%;
+  padding: 10px;
+  background-color: var(--black);
+  border: 2px solid var(--spotify_green);
+}
+
+.musicSearcResult_title{
+  margin-bottom: 8px;
+  font-size: 1.2em;
+}
+/*----------------- Search result section END ------------------*/
+
+
+/*-------------------- Chosen music section --------------------*/
 .chosenMusic_container, .noChosenMusic_container{
   height: 94px;
   width: 90%;
   margin: 0 auto;
   padding: 10px;
+  background-color: var(--black);
 }
 
 .noChosenMusic_container{
@@ -126,3 +153,5 @@
 .remove_chosenMusic_container:hover{
   cursor: pointer;
 }
+/*------------------ Chosen music section END ------------------*/
+/*------------------------ Select music section END -------------------------*/
