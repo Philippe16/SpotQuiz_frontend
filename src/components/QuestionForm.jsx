@@ -44,6 +44,7 @@ const QuestionForm = ({ questionNum }) => {
     musicSearcResult_container_elements.forEach(element => {
       if (!element.contains(e.target)) {
         element.style.display = 'none';
+        document.querySelector("#musicSearch_input" + questionNum).value = "";
       }
     });
   });
@@ -98,10 +99,10 @@ const QuestionForm = ({ questionNum }) => {
           </div>
 
           <div className="flexRow musicSearch_input_container">
-            <input className="musicSearch_input" type="text" placeholder="Search by music title" />
+            <input id={ "musicSearch_input" + questionNum } className="musicSearch_input" type="text" placeholder="Search by music title" />
 
-            <button className="musicSearch_btn" type="button">
-              <FontAwesomeIcon onClick={ e => handleShowResults(e) } icon={ faMagnifyingGlass } className="musicSearch_icon" />
+            <button id={ "musicSearch_btn" + questionNum } className="musicSearch_btn" type="button" onClick={ e => handleShowResults(e) }>
+              <FontAwesomeIcon icon={ faMagnifyingGlass } className="musicSearch_icon" />
             </button>
           </div>
 
