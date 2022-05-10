@@ -16,7 +16,7 @@ const Splash_Page = props => {
   // todo: Adjust later:  If not logged in, go to login. If logged in, go to home
   useEffect(() => {
     setTimeout(() => {
-      navigate('/home')
+      navigate('/login')
     }, 1000)
   }, []);
 
