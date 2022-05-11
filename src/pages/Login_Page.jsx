@@ -5,22 +5,7 @@ import { useState } from 'react';
 import facade from "../js/apiFacade.js";
 
 /* 
-Er færdig, det var min mor - hun har fødselsdag i dag xD
-    Taaak i:
-    
-  Skal du ikke over og fejre? :3 :O
-  Der er da tid til også at fejre hende :O Oooki, men ville ellers ikke have noget imod
-  , hvis du var taget over idag :P Oki doki :P
-  Ville bare være ked af, hvis du ikke tog afsted bare pga. projektet xD Goodie goodie
 
-  Men ja, den burde være færdig nu. Jeg kan bare teste senere :P
-  Du kan bare commit og push :D Også kan vi se på outsourcing -.-'
-
-  Den skal nok fin-tunes lidt og self. testes (med kørende backend),
-  men det burde være det.
-
-  Url inde i apiFacade.js skal måske også ændres, men der skal jeg så lige ind i vores backend
-  og tjekke den. Det kan gøres senere :P
 */
 
 const Login_Page = props => {
