@@ -8,11 +8,46 @@ const CreateAcc_page = props => {
     const [username, setUsername] = useState("");
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
+    const [reEmail, setReEmail] = useState("");
+    const [rePassword, setRePassword] = useState("");
 
   const handleSubmit = (e) => {
    e.preventDefault();
+   checkInput();
        
   }
+
+  const checkInput = () => {
+    
+    if (username.trim() === "") {
+      alert('Please enter username');
+      return;
+    }
+    //Check for the Email
+    if (email.trim() === "") {
+      alert('Please enter email');
+      return;
+    }
+
+    if (reEmail.trim() === "") {
+        alert('Please enter the same email');
+        return;
+      }
+
+
+    //Check for the password
+    if (password.trim() === "") {
+        alert('Please enter a password');
+        return;
+      }
+
+    if (rePassword.trim() === "") {
+        alert('Please enter the same password');
+        return;
+    }  
+
+    alert('Success');
+  };
 
 
 
@@ -21,7 +56,7 @@ const CreateAcc_page = props => {
       <div className="logo_container">
         <img src={logo} alt="Full SpotQuiz logo" />
       </div>
-      <form onSumbit={e => handleSubmit(e)} id="acc_form">     
+      <form onSubmit={e => handleSubmit(e)} id="acc_form">     
           <h1 id="title">Create Account</h1>
 
           
@@ -41,7 +76,7 @@ const CreateAcc_page = props => {
 
             <div className="acc_input_container">
                 <label className="acc_label" htmlFor="reEmail">Re-type email:</label>
-                <input name="email" id="email" className="acc_input" type="text" onChange={e => setEmail(e.target.value)} > 
+                <input name="reEmail" id="reEmail" className="acc_input" type="text" onChange={e => setReEmail(e.target.value)} > 
                 </input>
             </div>
 
@@ -52,8 +87,8 @@ const CreateAcc_page = props => {
             </div> 
 
             <div className="acc_input_container">
-                <label className="acc_label" htmlFor="password">Re-type password:</label>
-                <input name="password" id="password" className="acc_input" type="password" onChange={e => setPassword(e.target.value)} >
+                <label className="acc_label" htmlFor="rePassword">Re-type password:</label>
+                <input name="rePassword" id="rePassword" className="acc_input" type="password" onChange={e => setRePassword(e.target.value)} >
                 </input>
             </div> 
 

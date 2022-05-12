@@ -15,6 +15,7 @@ const Login_Page = props => {
 
   const handleSubmit = (e) => {
    e.preventDefault();
+   checkInput();
        
    facade.login(email, password)
    .then(() => {
@@ -27,6 +28,24 @@ const Login_Page = props => {
      console.log(err);
    });
   }
+
+  const checkInput = () => {
+    
+    
+    //Check for the Email
+    if (email.trim() !== "") {
+      alert('Please enter email');
+      return;
+    }
+    //Check for the password
+    if (password.trim() !== "") {
+        alert('Please Enter a password');
+        return;
+      }
+
+    alert('Success');
+  };
+
   
   return (
     <main>
