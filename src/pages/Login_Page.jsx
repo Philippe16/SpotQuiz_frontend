@@ -33,13 +33,13 @@ const Login_Page = props => {
     
     
     //Check for the Email
-    if (email.trim() !== "") {
+    if (email.trim() === "") {
       alert('Please enter email');
       return;
     }
     //Check for the password
-    if (password.trim() !== "") {
-        alert('Please Enter a password');
+    if (password.trim() === "") {
+        alert('Please enter a password');
         return;
       }
 
