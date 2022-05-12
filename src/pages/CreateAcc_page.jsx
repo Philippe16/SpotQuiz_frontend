@@ -8,8 +8,8 @@ const CreateAcc_page = props => {
     const [username, setUsername] = useState("");
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
-    const [reEmail, setReEmail] = useState("");
-    const [rePassword, setRePassword] = useState("");
+    const [retypedEmail, setRetypedEmail] = useState("");
+    const [retypedPassword, setRetypedPassword] = useState("");
 
   const handleSubmit = (e) => {
    e.preventDefault();
@@ -29,7 +29,7 @@ const CreateAcc_page = props => {
       return;
     }
 
-    if (reEmail.trim() === "") {
+    if (retypedEmail !== email) {
         alert('Please enter the same email');
         return;
       }
@@ -41,7 +41,7 @@ const CreateAcc_page = props => {
         return;
       }
 
-    if (rePassword.trim() === "") {
+    if (retypedPassword !== password) {
         alert('Please enter the same password');
         return;
     }  
@@ -76,7 +76,7 @@ const CreateAcc_page = props => {
 
             <div className="acc_input_container">
                 <label className="acc_label" htmlFor="reEmail">Re-type email:</label>
-                <input name="reEmail" id="reEmail" className="acc_input" type="text" onChange={e => setReEmail(e.target.value)} > 
+                <input name="retypedEmail" id="retypedEmail" className="acc_input" type="text" onChange={e => setRetypedEmail(e.target.value)} > 
                 </input>
             </div>
 
@@ -88,7 +88,7 @@ const CreateAcc_page = props => {
 
             <div className="acc_input_container">
                 <label className="acc_label" htmlFor="rePassword">Re-type password:</label>
-                <input name="rePassword" id="rePassword" className="acc_input" type="password" onChange={e => setRePassword(e.target.value)} >
+                <input name="retypedPassword" id="retypedPassword" className="acc_input" type="password" onChange={e => setRetypedPassword(e.target.value)} >
                 </input>
             </div> 
 
