@@ -90,9 +90,3 @@
 #error_message{
     width: 90%;
 }
-
-/* 
-    Snart færdig. Tænker at at før den går igang med at tjekke,
-    så skal vores state hooks lige resettes. Fx lige nu, hvis du får en fejl og fixer den,
-    så vil fejlbeskeden stadig være der :P Den skal fjernes :P
-*/

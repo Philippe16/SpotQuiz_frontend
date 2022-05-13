@@ -77,3 +77,16 @@
 #createLink_link{
     text-decoration: underline;
 }
+
+.error_container{
+    width: 100%;
+    margin: 10px auto;
+    padding: 0 20px;
+    color: red;
+    text-align: left;
+}
+
+
+#error_message{
+    width: 90%;
+}

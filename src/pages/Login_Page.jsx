@@ -5,45 +5,59 @@ import { useState } from 'react';
 import facade from "../js/apiFacade.js";
 
 /* 
-
+  Hvad var der galt? :O
+  idk O:
+  login er bare sort ah, den mangler error state hook
 */
 
 const Login_Page = props => {
-  
+  const [error, setError] = useState(null);
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
+  const [noEmail, setNoEmail] = useState(null);
+  const [noPassword, setNoPassword] = useState(null);
 
   const handleSubmit = (e) => {
    e.preventDefault();
    checkInput();
        
-   facade.login(email, password)
-   .then(() => {
-     setSignedIn(true);
-     setError(null);
-   })
-   .catch(err => {
-     setSignedIn(false);
-     setError(err);
-     console.log(err);
-   });
+  //  facade.login(email, password)
+  //  .then(() => {
+  //    setSignedIn(true);
+  //    setError(null);
+  //  })
+  //  .catch(err => {
+  //    setSignedIn(false);
+  //    setError(err);
+  //    console.log(err);
+  //  });
   }
 
   const checkInput = () => {
+    let containsError = false;
+
+    setNoEmail(null);
+    setNoPassword(null);
+    setError(null);
     
     
     //Check for the Email
     if (email.trim() === "") {
-      alert('Please enter email');
-      return;
+        containsError = true;
+        setNoEmail('Please enter email');
     }
+
     //Check for the password
     if (password.trim() === "") {
-        alert('Please enter a password');
-        return;
+        containsError = true;
+        setNoPassword('Please enter a password');
       }
 
-    alert('Success');
+      if(containsError === true){
+        setError("Error, please check your inputs");       
+    }else{
+        alert('Success'); 
+    }
   };
 
   
@@ -52,21 +66,39 @@ const Login_Page = props => {
       <div className="logo_container">
         <img src={logo} alt="Full SpotQuiz logo" />
       </div>
-      <form onSumbit={e => handleSubmit(e)} id="login_form">     
+      <form onSubmit={e => handleSubmit(e)} id="login_form">     
           <h1 id="title">Login</h1>
 
           <div className="formContent">
             <div className="login_input_container">
-                <label className="login_label" htmlFor="email">Email:</label>
-                <input name="email" id="email" className="login_input" type="text" onChange={e => setEmail(e.target.value)} > 
-                </input>
+              <label className="login_label" htmlFor="email">Email:</label>
+              <input name="email" id="email" className="login_input" type="text" onChange={e => setEmail(e.target.value)} > 
+              </input>
+                
+              {noEmail && (
+                <div className="error_container">
+                    { noEmail }
+                </div>
+              )}   
             </div>
 
             <div className="login_input_container">
-                <label className="login_label" htmlFor="password">Password:</label>
-                <input name="password" id="password" className="login_input" type="password" onChange={e => setPassword(e.target.value)} >
-                </input>
+              <label className="login_label" htmlFor="password">Password:</label>
+              <input name="password" id="password" className="login_input" type="password" onChange={e => setPassword(e.target.value)} >
+              </input>
+
+              {noPassword && (
+                <div className="error_container">
+                    { noPassword }
+                </div>
+              )}   
             </div> 
+
+            {error && (
+              <div className="error_container" id="error_message">
+                { error }
+              </div>
+            )}
 
             <div id="login_button_container">  
               <button id="login_button">Submit</button>

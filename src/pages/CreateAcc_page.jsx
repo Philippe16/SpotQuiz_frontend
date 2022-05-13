@@ -25,7 +25,7 @@ const CreateAcc_page = props => {
     e.preventDefault();
     checkInput();    
   }
-
+    
   const checkInput = () => {
     let containsError = false;
 
