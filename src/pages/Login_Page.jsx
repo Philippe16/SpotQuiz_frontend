@@ -4,12 +4,6 @@ import { Link } from "react-router-dom";
 import { useState } from 'react';
 import facade from "../js/apiFacade.js";
 
-/* 
-  Hvad var der galt? :O
-  idk O:
-  login er bare sort ah, den mangler error state hook
-*/
-
 const Login_Page = props => {
   const [error, setError] = useState(null);
   const [email, setEmail] = useState("");
