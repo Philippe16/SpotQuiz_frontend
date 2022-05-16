@@ -1,10 +1,12 @@
 import "../css/login_page.css";
 import logo from '../images/logo/full_logo/full_logo_500w.png'
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { useState } from 'react';
 import facade from "../js/apiFacade.js";
 
 const Login_Page = props => {
+  const navigate = useNavigate();
+
   const [error, setError] = useState(null);
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
@@ -13,18 +15,21 @@ const Login_Page = props => {
 
   const handleSubmit = (e) => {
    e.preventDefault();
-   checkInput();
+
+   let constainsError = checkInput();
        
-  //  facade.login(email, password)
-  //  .then(() => {
-  //    setSignedIn(true);
-  //    setError(null);
-  //  })
-  //  .catch(err => {
-  //    setSignedIn(false);
-  //    setError(err);
-  //    console.log(err);
-  //  });
+   if(!constainsError){
+    facade.login(email, password)
+    .then(() => {
+     if(localStorage.getItem('jwtToken') !== null){
+       navigate('/home')
+     }
+      setError(null);
+    })
+    .catch(err => {
+      setError("Wrong email or password");
+    });
+   }
   }
 
   const checkInput = () => {
@@ -49,9 +54,9 @@ const Login_Page = props => {
 
       if(containsError === true){
         setError("Error, please check your inputs");       
-    }else{
-        alert('Success'); 
-    }
+      }
+
+      return containsError;
   };
 
   

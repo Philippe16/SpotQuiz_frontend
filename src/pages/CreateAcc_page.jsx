@@ -5,22 +5,22 @@ import { useState } from 'react';
 import facade from "../js/apiFacade.js";
 
 const CreateAcc_page = props => {
-    const navigate = useNavigate();
-  
-    // Form input fields
-    const [username, setUsername] = useState("");
-    const [email, setEmail] = useState("");
-    const [password, setPassword] = useState("");
-    const [retypedEmail, setRetypedEmail] = useState("");
-    const [retypedPassword, setRetypedPassword] = useState("");
+  const navigate = useNavigate();
 
-    // Error variables
-    const [error, setError] = useState(null);
-    const [noUsername, setNoUsername] = useState(null);
-    const [noEmail, setNoEmail] = useState(null);
-    const [noRetypedEmail, setNoRetypedEmail] = useState(null);
-    const [noPassword, setNoPassword] = useState(null);
-    const [noRetypedPassword, setNoRetypedPassword] = useState(null);
+  // Form input fields
+  const [username, setUsername] = useState("");
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
+  const [retypedEmail, setRetypedEmail] = useState("");
+  const [retypedPassword, setRetypedPassword] = useState("");
+
+  // Error variables
+  const [error, setError] = useState(null);
+  const [noUsername, setNoUsername] = useState(null);
+  const [noEmail, setNoEmail] = useState(null);
+  const [noRetypedEmail, setNoRetypedEmail] = useState(null);
+  const [noPassword, setNoPassword] = useState(null);
+  const [noRetypedPassword, setNoRetypedPassword] = useState(null);
 
   const handleSubmit = (e) => {
     e.preventDefault();
