@@ -1,4 +1,4 @@
-const URL = " http://localhost:8080/SpotQuiz_backend_war_exploded"; 
+const URL = "http://localhost:8080/SpotQuiz_backend_war_exploded"; 
 
 function handleHttpErrors(res) {
   if (!res.ok) {

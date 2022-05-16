@@ -23,55 +23,33 @@ const CreateAcc_page = props => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
+
     let containsError = checkInput(); 
-    let newUser = {
+    
+    if(containsError === false){
+      let newUser = {
         username: username,
         email: email,
         password: password
       };
-    
-    if(containsError === false){
+
       const options = facade.makeOptions("POST", false, newUser);
     
       return fetch("http://localhost:8080/SpotQuiz_backend_war_exploded/api/SpotQuiz/createAccount", options)
-        .then(facade.handleHttpErrors)
         .then(res => {
-          facade.setToken(res.token);
-          facade.setUsername(res.username);
+          return res.json();
+        })
+        .then((data) => {
+          if(data.detailMessage === null){
+          // facade.setToken(res.token);
+          // facade.setUsername(res.username);
+          }
         })
         .catch(err => {
           console.log(err.message);
-          throw new Error("Something went wrong...");
         })
     }
   }
-
-  /* 
-  
-    Har btw tilføjet en console.log til vores catch.
-    Kan lige prøve at sende igen
-    Den laver post fejl igen :O Hvilken post fejl? :O
-    CreateAcc_page.jsx:36          POST http://localhost:8080/SpotQuiz_backend_war_exploded/api/SpotQuiz/createAccount 409
-    Den skal da lige googles :P
-
-    409 Conflict
-
-    Tror den virker :O
-    Har sat den til at give 409, hvis man prøver at oprette en bruger med en email, som allerede er i db...
-    Tjek lige om der er noget i db under User xD
-    Uh der er kommet en user ind xD
-    Prøv så lige igen med en ny user xD
-    username og email skal være unik xD
-
-    Det er vel altid noget xD
-    Hmm, så skal vi bare lige finde ud af, hvad den fejl er.
-    Står der noget i din IntelliJ console?
-
-    Men det vi skal lave:
-    - Lave et fetch til vores create acc. endpoint
-    - Hvis man logger på succesfully, så bliver man redirected til Home page
-    - Hvis ikke, så bliver man på create acc. page og får en fejlbesked (dem vi lavede sidst)
-  */
     
   const checkInput = () => {
     let containsError = false;
