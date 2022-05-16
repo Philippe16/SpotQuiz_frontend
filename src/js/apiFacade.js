@@ -30,14 +30,14 @@ function apiFacade() {
     localStorage.removeItem("username");
   }
  
-  const login = (user, password) => {
-    const options = makeOptions("POST", true,{username: user, password: password });
+  const login = (email, password) => {
+    const options = makeOptions("POST", true,{email: email, password: password });
     
     return fetch(URL + "/api/login", options)
       .then(handleHttpErrors)
       .then(res => {
         setToken(res.token);
-        setUsername(res.username);
+        console.log(res.token);
       })
       .catch(err => {
         throw new Error("Something went wrong...");

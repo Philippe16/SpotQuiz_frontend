@@ -1,10 +1,11 @@
 import "../css/createAcc_page.css";
 import logo from '../images/logo/full_logo/full_logo_500w.png'
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { useState } from 'react';
 import facade from "../js/apiFacade.js";
 
 const CreateAcc_page = props => {
+    const navigate = useNavigate();
   
     // Form input fields
     const [username, setUsername] = useState("");
@@ -35,19 +36,20 @@ const CreateAcc_page = props => {
 
       const options = facade.makeOptions("POST", false, newUser);
     
-      return fetch("http://localhost:8080/SpotQuiz_backend_war_exploded/api/SpotQuiz/createAccount", options)
-        .then(res => {
-          return res.json();
-        })
-        .then((data) => {
-          if(data.detailMessage === null){
-          // facade.setToken(res.token);
-          // facade.setUsername(res.username);
-          }
-        })
-        .catch(err => {
-          console.log(err.message);
-        })
+      fetch("http://localhost:8080/SpotQuiz_backend_war_exploded/api/SpotQuiz/createAccount", options)
+      .then(res => {
+        return res.json();
+      })
+      .then(data => {
+        facade.login(newUser.email, newUser.password);
+
+        if(localStorage.getItem('jwtToken') !== null){
+          navigate('/home')
+        }
+      })
+      .catch(err => {
+        console.log(err.message);
+      })
     }
   }
     
