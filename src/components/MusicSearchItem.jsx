@@ -13,7 +13,26 @@ const MusicSearchItem = ({ elementID, isPlaying, setIsPlaying }) => {
   const [thisIsPlaying, setThisIsPlaying] = useState(false);
 
   const handlePlaySong = e => {
-    console.log(e.target.parentNode);
+    /*
+      Hmmm, ja det skal jo justeres xD
+      Men det er bedre end min forrige fejl xD xD
+      Hmm, nogen idé til hvordan den lige skal justeres xD
+      Hmm, altså vi skal jo bare få deres iconer til at blive o: haha ja xD
+      "bare" xD
+      Men ja, det er bare det.
+      Den kan jo finde ud af, hvilken der "afspiller"
+      Tror måske at det har noget med den conditional rendering hmm.
+    */
+  
+    if(!isPlaying){
+      setIsPlaying(true);
+      setThisIsPlaying(true);
+    }else{
+      setIsPlaying(false);
+      setThisIsPlaying(false);
+    }
+
+    console.log("You clicked on a song...");
   }
 
   return (
@@ -34,15 +53,20 @@ const MusicSearchItem = ({ elementID, isPlaying, setIsPlaying }) => {
         </div>
       </div>
 
-      <div className="play_btn_container">
+      <div className="play_btn_container"> 
         <button id={ "play_btn_" + elementID } className="play_btn" type="button" onClick={ e => handlePlaySong(e) }>
           {!thisIsPlaying && (
             <FontAwesomeIcon icon={ faCirclePlay } />
           )}
 
-          {isPlaying && (
+          {isPlaying && thisIsPlaying && (
             <FontAwesomeIcon icon={ faCircleStop } />
           )}
+
+          {/*
+            
+            Fixet :O xD
+          */}
         </button>
       </div>
     </div>

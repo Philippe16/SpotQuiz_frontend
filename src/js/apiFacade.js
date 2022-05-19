@@ -5,7 +5,7 @@ function handleHttpErrors(res) {
     return Promise.reject({ status: res.status, fullError: res.json() })
   }
   return res.json();
-}
+} 
 
 function apiFacade() {
   const setToken = (token) => {
