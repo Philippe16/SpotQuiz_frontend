@@ -12,28 +12,27 @@ import { faCirclePlay, faCircleStop } from '@fortawesome/free-regular-svg-icons'
 const MusicSearchItem = ({ elementID, isPlaying, setIsPlaying }) => {
   const [thisIsPlaying, setThisIsPlaying] = useState(false);
 
-  const handlePlaySong = e => {
-    /*
-      Hmmm, ja det skal jo justeres xD
-      Men det er bedre end min forrige fejl xD xD
-      Hmm, nogen idé til hvordan den lige skal justeres xD
-      Hmm, altså vi skal jo bare få deres iconer til at blive o: haha ja xD
-      "bare" xD
-      Men ja, det er bare det.
-      Den kan jo finde ud af, hvilken der "afspiller"
-      Tror måske at det har noget med den conditional rendering hmm.
-    */
-  
-    if(!isPlaying){
-      setIsPlaying(true);
-      setThisIsPlaying(true);
-    }else{
-      setIsPlaying(false);
+  const handlePlaySong = e => {  
+    if(e.target === document.querySelector("#play_btn_icon_" + elementID)){
+      if(!thisIsPlaying){
+        setThisIsPlaying(true);
+      }else{
+        setThisIsPlaying(false);
+      }
+    }else if(e.target !== document.querySelector("#play_btn_icon_" + elementID)){
       setThisIsPlaying(false);
     }
-
-    console.log("You clicked on a song...");
   }
+
+  document.addEventListener('mouseup', function(e) {
+    let musicSearcResult_container_elements = document.querySelectorAll(".musicSearchResult_container");
+    
+    musicSearcResult_container_elements.forEach(element => {
+      if (!element.contains(e.target)) {
+        element.style.display = 'none';
+      }
+    });
+  });
 
   return (
     <div id={ elementID } className="flexRow searchItem">
@@ -54,19 +53,14 @@ const MusicSearchItem = ({ elementID, isPlaying, setIsPlaying }) => {
       </div>
 
       <div className="play_btn_container"> 
-        <button id={ "play_btn_" + elementID } className="play_btn" type="button" onClick={ e => handlePlaySong(e) }>
+        <button id={ "play_btn_" + elementID } className="play_btn" type="button">
           {!thisIsPlaying && (
-            <FontAwesomeIcon icon={ faCirclePlay } />
+            <FontAwesomeIcon id={ "play_btn_icon_" + elementID } icon={ faCirclePlay } onClick={ e => handlePlaySong(e) } />
           )}
 
-          {isPlaying && thisIsPlaying && (
-            <FontAwesomeIcon icon={ faCircleStop } />
+          {thisIsPlaying && (
+            <FontAwesomeIcon id={ "play_btn_icon_" + elementID } icon={ faCircleStop } onClick={ e => handlePlaySong(e) } />
           )}
-
-          {/*
-            
-            Fixet :O xD
-          */}
         </button>
       </div>
     </div>

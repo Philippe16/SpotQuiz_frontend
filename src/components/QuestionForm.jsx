@@ -18,6 +18,8 @@ import { faXmark } from '@fortawesome/free-solid-svg-icons';
 import MusicSearchItem from "../components/MusicSearchItem";
 
 const QuestionForm = ({ questionNum, isPlaying, setIsPlaying}) => {
+  let musicItems = [1, 2, 3, 4, 5];
+
   const handleMusicSearch = e => {
     document.querySelector("#musicSearchResult" + questionNum).style.display = "block";
   }
@@ -116,10 +118,14 @@ const QuestionForm = ({ questionNum, isPlaying, setIsPlaying}) => {
                 Result(s)
               </div>
 
+              { musicItems.map((index) => {
+                return(<MusicSearchItem key={ index } elementID = { "resultItem_q" + index } isPlaying={ isPlaying } setIsPlaying={ setIsPlaying }/>)
+              })}
+
+              {/* <MusicSearchItem elementID = { "resultItem_q" + questionNum } isPlaying={ isPlaying } setIsPlaying={ setIsPlaying }/>
               <MusicSearchItem elementID = { "resultItem_q" + questionNum } isPlaying={ isPlaying } setIsPlaying={ setIsPlaying }/>
               <MusicSearchItem elementID = { "resultItem_q" + questionNum } isPlaying={ isPlaying } setIsPlaying={ setIsPlaying }/>
-              <MusicSearchItem elementID = { "resultItem_q" + questionNum } isPlaying={ isPlaying } setIsPlaying={ setIsPlaying }/>
-              <MusicSearchItem elementID = { "resultItem_q" + questionNum } isPlaying={ isPlaying } setIsPlaying={ setIsPlaying }/>
+              <MusicSearchItem elementID = { "resultItem_q" + questionNum } isPlaying={ isPlaying } setIsPlaying={ setIsPlaying }/> */}
             </div>
 
             { !chosenMusic && (
