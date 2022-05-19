@@ -31,6 +31,8 @@ const CreateQuiz_Page = props => {
   const [num5, setNum5] = useState(num5_Chosen);
   const [num10, setNum10] = useState(num10_nonChosen);
 
+  const [isPlaying, setIsPlaying] = useState(false);
+
   const allSetNum = [setNum3, setNum5, setNum10];
 
   let currentlyChosenNum = num5;
@@ -114,7 +116,7 @@ const CreateQuiz_Page = props => {
 
             <section id="create_questions_container" className="flexRow">
               { questionElements.map((index) => {
-                return(<QuestionForm key={ index } questionNum={index + 1} />)
+                return(<QuestionForm key={ index } questionNum={index + 1} isPlaying={ isPlaying } setIsPlaying={setIsPlaying}/>)
               })}
             </section>
 

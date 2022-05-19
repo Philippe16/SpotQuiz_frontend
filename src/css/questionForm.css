@@ -20,12 +20,12 @@
 
 .create_question_input{
   height: 50px;
-  width: 90%;
+  width: 88%;
   margin-bottom: 20px;
   border: 2px solid var(--purple);
   border-radius: 25px;
   text-align: center;
-  font-size: 1.5em;
+  font-size: 1.3em;
 }
 
 .options_container{
@@ -72,45 +72,80 @@
 }
 
 /*----------------------- Search field ------------------------*/
+.musicSearch_container{
+  width: 94%;
+  margin: 0 auto;
+}
+
 .musicSearch_input_container{
-  justify-content: center;
-  margin-bottom: 20px;
+  justify-content: space-between;
 }
 
 .musicSearch_input{
-  width: 80%;
+  width: 49%;
+  margin-bottom: 20px;
   height: 40px;
-  padding: 3px 10px;
+  padding: 5px 8px;
   border: 2px solid var(--spotify_green);
-  border-right: none;
-  border-radius: 90px 0 0 90px;
-  font-size: 1.2em;
+  border-radius: 15px;
+  font-size: 1.1em;
+}
+
+.musicSearch_btn_container{
+  width: 100%;
+  margin-bottom: 20px;
 }
 
 .musicSearch_btn{
-  width: 10%;
-  border: 2px solid var(--spotify_green);
-  border-left: none;
-  border-radius: 0 90px 90px 0;
+  width: 100%;
+  height: 30px;
+  background-color: var(--spotify_green);
+  color: var(--white);
   font-size: 1.2em;
-  background: var(--white);
+}
+
+.musicSearch_btn:hover{
+  background-color: #19a54a;
 }
 /*--------------------- Search field END ----------------------*/
 
 
 /*------------------- Search result section --------------------*/
-.musicSearcResult_container{
+.musicSearchResult_container{
   display: none;
-  left: 5%;
-  width: 90%;
+  left: 3%;
+  max-height: 300px;
+  overflow-y: scroll;
+  width: 94%;
   padding: 10px;
   background-color: var(--black);
   border: 2px solid var(--spotify_green);
 }
 
-.musicSearcResult_title{
+.musicSearchResult_title{
   margin-bottom: 8px;
   font-size: 1.2em;
+}
+
+/* Firefox */
+.musicSearchResult_container {
+  scrollbar-width: auto;
+  scrollbar-color: var(--spotify_green) #313131;
+}
+
+/* Chrome, Edge, and Safari */
+.musicSearchResult_container::-webkit-scrollbar {
+  width: 16px;
+}
+
+.musicSearchResult_container::-webkit-scrollbar-track {
+  background: #313131;
+}
+
+.musicSearchResult_container::-webkit-scrollbar-thumb {
+  background-color: var(--spotify_green);
+  border-radius: 10px;
+  border: 0px none var(--spotify_green);
 }
 /*----------------- Search result section END ------------------*/
 
@@ -118,8 +153,9 @@
 /*-------------------- Chosen music section --------------------*/
 .chosenMusic_container, .noChosenMusic_container{
   height: 94px;
-  width: 90%;
+  width: 94%;
   margin: 0 auto;
+  margin-bottom: 30px;
   padding: 10px;
   background-color: var(--black);
 }

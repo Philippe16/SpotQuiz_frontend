@@ -82,6 +82,7 @@ p{
 button{
   cursor: pointer;
   border: none;
+  font-family: dosis_regular;
 }
 
 button:focus, input:focus{
@@ -107,6 +108,27 @@ img, video{
 ::-ms-input-placeholder { /* Microsoft Edge */
   color: var(--placeholder_grey);
   font-family: dosis_regular;
+}
+
+/* Firefox */
+* {
+  scrollbar-width: auto;
+  scrollbar-color: var(--purple) #ffffff;
+}
+
+/* Chrome, Edge, and Safari */
+*::-webkit-scrollbar {
+  width: 16px;
+}
+
+*::-webkit-scrollbar-track {
+  background: #ffffff;
+}
+
+*::-webkit-scrollbar-thumb {
+  background-color: var(--purple);
+  border-radius: 10px;
+  border: 0px none var(--purple);
 }
 /*------------------------------ Set default stuff END ------------------------------*/
 

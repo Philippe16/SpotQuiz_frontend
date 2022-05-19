@@ -17,9 +17,9 @@ import { faXmark } from '@fortawesome/free-solid-svg-icons';
 // Components
 import MusicSearchItem from "../components/MusicSearchItem";
 
-const QuestionForm = ({ questionNum }) => {
-  const handleShowResults = e => {
-    document.querySelector("#musicSearcResult" + questionNum).style.display = "block";
+const QuestionForm = ({ questionNum, isPlaying, setIsPlaying}) => {
+  const handleMusicSearch = e => {
+    document.querySelector("#musicSearchResult" + questionNum).style.display = "block";
   }
 
 
@@ -39,12 +39,11 @@ const QuestionForm = ({ questionNum }) => {
 
 
   document.addEventListener('mouseup', function(e) {
-    let musicSearcResult_container_elements = document.querySelectorAll(".musicSearcResult_container");
+    let musicSearcResult_container_elements = document.querySelectorAll(".musicSearchResult_container");
     
     musicSearcResult_container_elements.forEach(element => {
       if (!element.contains(e.target)) {
         element.style.display = 'none';
-        document.querySelector("#musicSearch_input" + questionNum).value = "";
       }
     });
   });
@@ -98,22 +97,29 @@ const QuestionForm = ({ questionNum }) => {
             </div>
           </div>
 
-          <div className="flexRow musicSearch_input_container">
-            <input id={ "musicSearch_input" + questionNum } className="musicSearch_input" type="text" placeholder="Search by music title" />
+          <div className="flexColumn musicSearch_container">
+            <div className="flexRow musicSearch_input_container">
+              <input id={ "musicSearch_title_input_" + questionNum } className="musicSearch_input" type="text" placeholder="Song title"/>
+              <input id={ "musicSearch_artist_input_" + questionNum } className="musicSearch_input" type="text" placeholder="Artist"/>
+            </div>
 
-            <button id={ "musicSearch_btn" + questionNum } className="musicSearch_btn" type="button" onClick={ e => handleShowResults(e) }>
-              <FontAwesomeIcon icon={ faMagnifyingGlass } className="musicSearch_icon" />
-            </button>
+            <div className="musicSearch_btn_container">
+              <button id={ "musicSearch_btn" + questionNum } className="musicSearch_btn" type="button" onClick={ e => handleMusicSearch(e) }>
+                Search &nbsp; <FontAwesomeIcon icon={ faMagnifyingGlass } className="musicSearch_icon" />
+              </button>
+            </div>
           </div>
 
           <div className="posRelative create_music_container">
-            <div id={ "musicSearcResult" + questionNum } className="posAbsolute musicSearcResult_container">
-              <div className="musicSearcResult_title">
+            <div id={ "musicSearchResult" + questionNum } className="posAbsolute musicSearchResult_container">
+              <div className="musicSearchResult_title">
                 Result(s)
               </div>
 
-              <MusicSearchItem elementID = { "resultItem_q" + questionNum } />
-              <MusicSearchItem elementID = { "resultItem_q" + questionNum } />
+              <MusicSearchItem elementID = { "resultItem_q" + questionNum } isPlaying={ isPlaying } setIsPlaying={ setIsPlaying }/>
+              <MusicSearchItem elementID = { "resultItem_q" + questionNum } isPlaying={ isPlaying } setIsPlaying={ setIsPlaying }/>
+              <MusicSearchItem elementID = { "resultItem_q" + questionNum } isPlaying={ isPlaying } setIsPlaying={ setIsPlaying }/>
+              <MusicSearchItem elementID = { "resultItem_q" + questionNum } isPlaying={ isPlaying } setIsPlaying={ setIsPlaying }/>
             </div>
 
             { !chosenMusic && (
@@ -150,7 +156,9 @@ const QuestionForm = ({ questionNum }) => {
 }
 
 QuestionForm.propTypes = {
-  questionNum: PropTypes.number.isRequired
+  questionNum: PropTypes.number.isRequired,
+  isPlaying: PropTypes.bool.isRequired,
+  setIsPlaying: PropTypes.func.isRequired
 }
 
 export default QuestionForm

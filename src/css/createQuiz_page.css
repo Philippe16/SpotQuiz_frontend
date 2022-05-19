@@ -69,6 +69,7 @@ main{
 }
 
 #create_quiz_submit_btn_container{
+  margin-top: 30px;
   text-align: center;
 }
 
